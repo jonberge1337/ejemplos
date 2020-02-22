@@ -1,15 +1,23 @@
 #include <dirent.h>
 #include <stdio.h>
 
-int main(){
+int main(int argc, char *argv[]) {
     DIR *d;
     struct dirent *dir;
-    d = opendir(".");
-    if(d){
-        while((dir = readdir(d)) != NULL){
-            printf("%s\n", dir->d_name);
+    if (argc == 2){
+        d = opendir(argv[1]);
+        if(d){
+            while((dir = readdir(d)) != NULL){
+                printf("%s %i\n", dir->d_name, dir->d_type);
+            }
+            closedir(d);
+        } else {
+            puts("No es una ruta valida");
         }
-        closedir(d);
+
+    } else {
+        puts("Tienes que pasarle como parametro la ruta");
     }
+
     return 0;
 }
