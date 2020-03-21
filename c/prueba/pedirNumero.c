@@ -11,7 +11,7 @@ int main(){
         puts("Introduce un numero: ");
         fgets(buf, sizeof(buf), stdin);
 
-        buf[strlen(buf) - 1] = 0; // Quitamos salto de linea
+        buf[strlen(buf) - 1] = '\0'; // Quitamos salto de linea
 
         int n = strtol(buf, &end, 10);
         if(n){

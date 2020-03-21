@@ -12,4 +12,3 @@ if (-f "$directorio/$fichero") {
 else {
     print "El archivo $fichero no esta en $directorio\n";
 }
-

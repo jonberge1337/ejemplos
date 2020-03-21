@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(){
     FILE *archivo = fopen("archivoPrueba.txt", "w"); // creamos archivo
     if(!archivo){ perror("Error al crear archvio"); return 1;}

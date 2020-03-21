@@ -14,6 +14,8 @@ int main(){
    strcat(example, "years old.");
 
    /* Display the concatenated strings */
+   printf("%lu\n", sizeof(example) / sizeof(char));
+   printf("%lu\n", sizeof(example));
    printf("%s\n", example);
 
    return 0;
