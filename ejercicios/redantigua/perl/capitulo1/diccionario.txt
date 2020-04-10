@@ -1,0 +1,3 @@
+hello=hola
+car = carro
+blue = azul

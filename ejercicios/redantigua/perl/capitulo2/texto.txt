@@ -1,0 +1,24 @@
+Hacer una función que cuenta las palabras en un documento de texto.
+
+Hacer una función que quita doble espacios entre palabras.
+
+La función 'trim' no existe en Perl.
+Hacer una función usando un RegExp.
+
+Hacer una función que valida números de teléfono.
+Formatos válidos deben ser:
+00502 555 55 55
++502 555 55 55
+555 55 55
+555 55 55 ext. 123
+	  
+sin espacios o con uno o varios espacios entre los dígitos.
+Debe indicar si incluye o no incluye código de país y extensión.
+
+La meta es hacer una función de devuelve Verdad o Falso si una direccion IP es valida o no, usando un RegExp.
+La expresión debe ser de una sola linea. El formato de una IP es (0-255).(0-255).(0-255).(0-255), o sea 4 números en el intervalo de 0 a 255, separados por punto.
+Pero vamos poco a poco...
+a. La función debe devolver Verdad si un número está en el intervalo 0-255.
+Tips: Hacer una expresión por el intervalo 0-9, otro por el intervalo 10-99, otro por el intervalo 100-199, otro por el intervalo 200-249, otro por el intervalo 250-255.
+b. Agregar el punto (.) al final de la expresión, para validar un número 0-255 que antecede un punto (.).
+c. Repetir a. y b. hasta validar una IP completa.
