@@ -38,11 +38,27 @@ sub getUpdates {
     my @messages
         = $$api =~ m/(\{"update_id.*?\}\})/sg;    # dividimos en cada mensaje
 
-    $messages[$#messages]
-        =~ /.*?"chat":\{"id":(-?\d+).*?"date":(\d+).*?"text":"(.*?)"/s;
+    $messages[$#messages] =~ /.*?"message_id":(\d+)/s;
+    my $message_id = $1;
+    $messages[$#messages] =~ /.*?"chat":\{"id":(-?\d+)/s;
+    my $chat_id = $1;
+    $messages[$#messages] =~ /.*?"date":(\d+)/s;
+    my $date = $1;
+    $messages[$#messages] =~ /.*?"text":"(.*?)"/s;
+    my $text = $1;
 
     # $1 = chat_id $2 = date $3 = text
-    $self->{chat}->{$1} = { date => $2, text => $3, action => '' };
+    $self->{chat}->{$chat_id} = {
+        date       => $date,
+        text       => $text,
+        message_id => $message_id,
+        do         => 0
+    };
+
+    # use Data::Dumper;
+    # print Dumper($self);
+    return $self->{chat};
+
 }
 
 sub eval {
@@ -52,10 +68,12 @@ sub eval {
         print Dumper($_);
         if ( !$self->{chat}->{$_}->{action} ) {
             my $text = $self->{chat}->{$_}->{text};
-            if ($text =~ /^$/) {
+            if ( $text =~ /^$/ ) {
+
                 # body...
             }
-            elsif ($text =~ /^$/) {
+            elsif ( $text =~ /^$/ ) {
+
                 # elsif...
             }
             else {
