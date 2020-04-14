@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script src="juego.js">
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="juego.js"></script>
     <title>Juego numeros</title>
   </head>
   <body onload="genera_tabla()">
-    <button onclick="">Start</button>
+    <div id="tabla"></div>
+    <div class="inline"><button id="start" onclick="crono()">Start</button></div>
+    <div class="inline">
+      <p><span id="min">0</span>:<span id="sec">00</span></p>
+    </div>
   </body>
 </html>
