@@ -60,7 +60,7 @@ function crono() {
         "si quieres volver a jugar dale a start"
       );
     }
-  }, 10);
+  }, 1000);
 }
 
 function genera_tabla() {
